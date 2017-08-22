@@ -32,7 +32,7 @@
 
         <dependency>
             <groupId>org.nuisto</groupId>
-            <artifactId>mule-static-analysis</artifactId>
+            <artifactId>mule-lint</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
