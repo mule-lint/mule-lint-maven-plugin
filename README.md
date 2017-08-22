@@ -6,9 +6,48 @@ and easier to include within a maven build. See the
 [mule-lint project](https://github.com/nuisto/mule-lint) for
 more details.
 
+The [mule-lint project](https://github.com/nuisto/mule-lint) as well as this one does not perform any assertions,
+that is left up to the consumer of the resulting output file. The reasoning
+behind this was really just two thoughts; 1) In order to "release early/release
+often" this was left out to solve with other tools/scripts, 2) Put the
+responsibility of asserting/checking to something else and not the
+responsibility of this or the mule-lint project.
+
+Keeping the assertions out of these two is not fulling set it stone, but
+probably won't be a feature fullfilled for some time. Having assertions around
+how often it occurs in either a project as a whole or how many times within a
+file, does seem valuable to me (i.e. It's _okay_ for a logger not to have a
+category declared, but if we have 20 loggers in the project without a logger, then that
+might be an issue).
+
+This plugin is only necessary if you want to invoke the [mule-lint
+project](https://github.com/nuisto/mule-lint)
+through maven (of course), if you want to invoke the mule-lint project by other
+means, then this is not needed and you can use mule-lint directly, see the
+[mule-lint project](https://github.com/nuisto/mule-lint) for more details.
+
 ## Getting Started
+This project does not perform any logic, it purely passes information on to the
+mule-lint application. The parameters are:
+`rules` - Required.
+`sourceDirectory` - Optional.
+`output` -
 
 ```
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.nuisto</groupId>
+      <artifactId>mule-lint-maven-plugin</artifactId>
+      <version>0.1-SNAPSHOT</version>
+      <configuration>
+        <rules>path/to/rules.txt</rules>
+        <sourceDirectory>path/to/sources</sourceDirectory>
+        <output>output/filename.json</output>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 ```
 
 ## Built With
