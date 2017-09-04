@@ -12,6 +12,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <mule.lint.version>0.2.0-SNAPSHOT</mule.lint.version>
   </properties>
 
   <developers>
@@ -52,7 +53,7 @@
     <dependency>
       <groupId>org.nuisto</groupId>
       <artifactId>mule-lint</artifactId>
-      <version>0.1</version>
+      <version>${mule.lint.version}</version>
     </dependency>
   </dependencies>
 
