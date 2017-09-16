@@ -29,9 +29,9 @@ means, then this is not needed and you can use mule-lint directly, see the
 ## Getting Started
 This project does not perform any logic, it purely passes information on to the
 mule-lint application. The parameters are:
-`rules` - Required.
-`sourceDirectory` - Optional.
-`output` -
+# `rules` - Required.
+# `sourceDirectory` - Optional.
+# `output` - A file location where json formatted results are written.
 
 ```
 <build>
@@ -39,15 +39,20 @@ mule-lint application. The parameters are:
     <plugin>
       <groupId>org.nuisto</groupId>
       <artifactId>mule-lint-maven-plugin</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>0.3.0</version>
       <configuration>
-        <rules>path/to/rules.txt</rules>
-        <sourceDirectory>path/to/sources</sourceDirectory>
-        <output>output/filename.json</output>
+        <rules>rules.txt</rules>
+        <sourceDirectory>src/main/app</sourceDirectory>
+        <output>mule-lint-results.json</output>
       </configuration>
     </plugin>
   </plugins>
 </build>
+```
+
+With the above configuration in your pom, you can run the plugin with:
+```
+mvn org.nuisto:mule-lint-maven-plugin:analyze-mule
 ```
 
 ## Built With
