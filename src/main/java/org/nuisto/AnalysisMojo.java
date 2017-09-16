@@ -17,13 +17,12 @@ public class AnalysisMojo extends AbstractMojo {
   private String sources;
 
   @Parameter(property = "analyze-mule.output")
-  private String outputDirectory;
+  private String output;
 
   public void execute() throws MojoExecutionException {
-    getLog().info("Hello, world.");
-    getLog().info("Rules are " + rules);
-    getLog().info("Sources are " + sources);
-    getLog().info("OutputDirectory is " + outputDirectory);
+    getLog().debug("Rules are " + rules);
+    getLog().debug("Sources are " + sources);
+    getLog().debug("Output is " + output);
 
     List<String> args = new ArrayList<String>();
     args.add("-r");
@@ -33,7 +32,7 @@ public class AnalysisMojo extends AbstractMojo {
     args.add(sources);
 
     args.add("-o");
-    args.add(outputDirectory);
+    args.add(output);
 
     new org.nuisto.MuleLint().run(args.toArray(new String[]{}));
     //this.getClass().getResourceAsStream("");
