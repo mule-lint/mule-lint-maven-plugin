@@ -39,7 +39,7 @@ mule-lint application. The parameters are:
     <plugin>
       <groupId>org.nuisto</groupId>
       <artifactId>mule-lint-maven-plugin</artifactId>
-      <version>0.3.0</version>
+      <version>0.4.0</version>
       <configuration>
         <rules>rules.txt</rules>
         <sourceDirectory>src/main/app</sourceDirectory>
