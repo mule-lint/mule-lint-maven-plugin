@@ -30,7 +30,7 @@ means, then this is not needed and you can use mule-lint directly, see the
 This project does not perform any logic, it purely passes information on to the
 mule-lint application. The parameters are:
 # `rules` - Required.
-# `sourceDirectory` - Optional.
+# `sources` - Optional.
 # `output` - A file location where json formatted results are written.
 
 ```
@@ -42,7 +42,7 @@ mule-lint application. The parameters are:
       <version>0.4.0</version>
       <configuration>
         <rules>rules.txt</rules>
-        <sourceDirectory>src/main/app</sourceDirectory>
+        <sources>src/main/app</sources>
         <output>mule-lint-results.json</output>
       </configuration>
     </plugin>
