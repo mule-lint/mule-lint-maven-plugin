@@ -10,6 +10,9 @@ import java.util.List;
 
 @Mojo(name = "analyze-mule")
 public class AnalysisMojo extends AbstractMojo {
+  @Parameter(property = "analyze-mule.dictionary")
+  private String dictionary;
+
   @Parameter(property = "analyze-mule.rules")
   private String rules;
 
@@ -20,11 +23,15 @@ public class AnalysisMojo extends AbstractMojo {
   private String output;
 
   public void execute() throws MojoExecutionException {
+    getLog().debug("Dictionary is " + dictionary);
     getLog().debug("Rules are " + rules);
     getLog().debug("Sources are " + sources);
     getLog().debug("Output is " + output);
 
     List<String> args = new ArrayList<String>();
+    args.add("-d");
+    args.add(dictionary);
+
     args.add("-r");
     args.add(rules);
 
