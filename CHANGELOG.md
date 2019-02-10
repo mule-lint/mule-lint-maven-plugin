@@ -7,7 +7,12 @@ the configuration of the plugin itself. In turn very little.
 
 ## [Unreleased]
 
-## [0.3.0] - 2014-09-16
+## [0.5.0] - 2019-02-10
+### Added
+- New "dictionary" argument to support "camel casing" checks
+### Changed
+
+## [0.3.0] - 2017-09-16
 ### Added
 - None
 ### Changed
