@@ -22,26 +22,19 @@ public class AnalysisMojo extends AbstractMojo {
   @Parameter(property = "analyze-mule.output")
   private String output;
 
+  @Parameter(property = "analyze-mule.excludes")
+  private List excludes;
+
   public void execute() throws MojoExecutionException {
     getLog().debug("Dictionary is " + dictionary);
     getLog().debug("Rules are " + rules);
     getLog().debug("Sources are " + sources);
     getLog().debug("Output is " + output);
+    getLog().debug("Excludes is " + excludes);
 
-    List<String> args = new ArrayList<String>();
-    args.add("-d");
-    args.add(dictionary);
 
-    args.add("-r");
-    args.add(rules);
+    new org.nuisto.MuleLint().invoke(dictionary, rules, sources, output, (String[])excludes.toArray(new String[]{}), null);
 
-    args.add("-s");
-    args.add(sources);
-
-    args.add("-o");
-    args.add(output);
-
-    new org.nuisto.MuleLint().run(args.toArray(new String[]{}));
     //this.getClass().getResourceAsStream("");
 
 
