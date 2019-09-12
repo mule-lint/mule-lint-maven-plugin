@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.nuisto</groupId>
   <artifactId>mule-lint-maven-plugin</artifactId>
-  <version>0.6.0-SNAPSHOT</version>
+  <version>0.5.1</version>
   <packaging>maven-plugin</packaging>
   <name>mule-lint-maven-plugin</name>
   <description>A Maven Plugin for the Mule lint project.</description>
