@@ -29,9 +29,9 @@ means, then this is not needed and you can use mule-lint directly, see the
 ## Getting Started
 This project does not perform any logic, it purely passes information on to the
 mule-lint application. The parameters are:
-# `rules` - Required.
-# `sources` - Optional.
-# `output` - A file location where json formatted results are written.
+- `rules` - Required.
+- `sources` - Optional.
+- `output` - A file location where json formatted results are written.
 
 ```
 <build>
