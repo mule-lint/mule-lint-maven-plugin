@@ -44,6 +44,7 @@ mule-lint application. The parameters are:
         <rules>rules.txt</rules>
         <sources>src/main/app</sources>
         <output>mule-lint-results.json</output>
+        <dictionary>words.txt</dictionary>
       </configuration>
     </plugin>
   </plugins>
