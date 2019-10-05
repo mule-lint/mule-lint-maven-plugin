@@ -29,7 +29,7 @@ public class AnalysisMojo extends AbstractMojo {
   @Parameter(property = "analyze-mule.fail-build")
   private boolean failBuild;
 
-  public void execute() throws MojoExecutionException, MojoFailureException {
+  public void execute() throws MojoExecutionException {
     getLog().debug("Dictionary is " + dictionary);
     getLog().debug("Rules are " + rules);
     getLog().debug("Sources are " + sources);
@@ -37,12 +37,12 @@ public class AnalysisMojo extends AbstractMojo {
     getLog().debug("Excludes is " + excludes);
     getLog().debug("Fail build is " + failBuild);
 
-    try {
-      new org.nuisto.MuleLint().invoke(failBuild, dictionary, rules, sources, output, (String[])excludes.toArray(new String[]{}), null);
+    int result = new org.nuisto.MuleLint().invoke(failBuild, dictionary, rules, sources, output, (String[])excludes.toArray(new String[]{}), null);
+
+    if (result != 0) {
+      throw new MojoExecutionException("Failure on mule-lint");
     }
-    catch(Exception ex) {
-      throw new MojoFailureException("Failure on mule-lint");
-    }
+
 
     //this.getClass().getResourceAsStream("");
 
