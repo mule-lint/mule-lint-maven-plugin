@@ -1,12 +1,12 @@
 # Mule Lint Maven Plugin
 
 The purpose of this project, is to be a wrapper for the
-[mule-lint project](https://github.com/nuisto/mule-lint),
+[mule-lint project](https://github.com/mule-lint/mule-lint),
 and easier to include within a maven build. See the
-[mule-lint project](https://github.com/nuisto/mule-lint) for
+[mule-lint project](https://github.com/mule-lint/mule-lint) for
 more details.
 
-The [mule-lint project](https://github.com/nuisto/mule-lint) as well as this one does not perform any assertions,
+The [mule-lint project](https://github.com/mule-lint/mule-lint) as well as this one does not perform any assertions,
 that is left up to the consumer of the resulting output file. The reasoning
 behind this was really just two thoughts; 1) In order to "release early/release
 often" this was left out to solve with other tools/scripts, 2) Put the
@@ -21,17 +21,18 @@ category declared, but if we have 20 loggers in the project without a logger, th
 might be an issue).
 
 This plugin is only necessary if you want to invoke the [mule-lint
-project](https://github.com/nuisto/mule-lint)
+project](https://github.com/mule-lint/mule-lint)
 through maven (of course), if you want to invoke the mule-lint project by other
 means, then this is not needed and you can use mule-lint directly, see the
-[mule-lint project](https://github.com/nuisto/mule-lint) for more details.
+[mule-lint project](https://github.com/mule-lint/mule-lint) for more details.
 
 ## Getting Started
 This project does not perform any logic, it purely passes information on to the
 mule-lint application. The parameters are:
-- `rules` - Required.
-- `sources` - Optional.
-- `output` - A file location where json formatted results are written.
+- `rules` - Required. The mule-lint DSL rules
+- `sources` - Optional. Directory (default src/app) of where the source files are located.
+- `output` - Required. A file location where json formatted results are written.
+- `dictionary` - Required. File containing a word per line, for casing validation.
 
 ```
 <build>
@@ -66,13 +67,13 @@ Please read [CONTRIBUTING.md](https://github.com/nuisto/mule-lint-maven-plugin/C
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nuisto/mule-lint-maven-plugin/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mule-lint/mule-lint-maven-plugin/tags).
 
 ## Authors
 
 * **Chad Gorshing** - *Initial work* - [cgorshing](https://gens.io/profile/cgorshing)
 
-See also the list of [contributors](https://github.com/nuisto/mule-lint-maven-plugin/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/mule-lint/mule-lint-maven-plugin/contributors) who participated in this project.
 
 ## License
 
