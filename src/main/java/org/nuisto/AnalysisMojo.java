@@ -37,9 +37,9 @@ public class AnalysisMojo extends AbstractMojo {
     getLog().debug("Excludes is " + excludes);
     getLog().debug("Fail build is " + failBuild);
 
-    int result = new org.nuisto.MuleLint().invoke(failBuild, dictionary, rules, sources, output, (String[])excludes.toArray(new String[]{}), null);
-
-    if (result != 0) {
+    try {
+      new org.nuisto.MuleLint().invoke(failBuild, dictionary, rules, sources, output, (String[]) excludes.toArray(new String[]{}), null);
+    } catch (Exception ex) {
       throw new MojoExecutionException("Failure on mule-lint");
     }
 
