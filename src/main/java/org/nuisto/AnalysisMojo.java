@@ -40,7 +40,7 @@ public class AnalysisMojo extends AbstractMojo {
     try {
       new org.nuisto.MuleLint().invoke(failBuild, dictionary, rules, sources, output, (String[]) excludes.toArray(new String[]{}), null);
     } catch (Exception ex) {
-      throw new MojoExecutionException("Failure on mule-lint");
+      throw new MojoExecutionException(ex.getMessage());
     }
 
 
