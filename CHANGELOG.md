@@ -1,11 +1,13 @@
 # Changelog
-All releases coincide with the [mule-lint project](https://github.com/nuisto/mule-lint).
+All releases coincide with the [mule-lint project](https://github.com/mule-lint/mule-lint).
 See that project for more information.
 
 This file will track changes to just how this maven plugin calls mule-lint and
 the configuration of the plugin itself. In turn very little.
 
-## [Unreleased]
+## [0.5.3] - 2020-08-18
+### Changed
+- Error messages will now be the `exception.getMessage()` instead of the generic `Failure on mule-lint`
 
 ## [0.5.0] - 2019-02-10
 ### Added
