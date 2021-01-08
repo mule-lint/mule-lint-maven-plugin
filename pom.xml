@@ -36,9 +36,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://github.com/nuisto/mule-lint-maven-plugin.git</connection>
-    <developerConnection>scm:git:https://github.com/nuisto/mule-lint-maven-plugin.git</developerConnection>
-    <url>https://github.com/nuisto/mule-lint-maven-plugin</url>
+    <connection>scm:git:https://github.com/mule-lint/mule-lint-maven-plugin.git</connection>
+    <developerConnection>scm:git:https://github.com/mule-lint/mule-lint-maven-plugin.git</developerConnection>
+    <url>https://github.com/mule-lint/mule-lint-maven-plugin</url>
   </scm>
 
   <dependencies>
